@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 
+require('dotenv').config();
+
 const app = express();
 
 app.use(cors());
@@ -13,7 +15,9 @@ app.get('/', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
+const HOST = process.env.HOST || 'localhost';
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
 });
