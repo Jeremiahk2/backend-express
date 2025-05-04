@@ -9,9 +9,16 @@ app.use(cors());
 app.use(express.json());
 
 // Basic route
+app.get('/api', (req, res) => {
+    res.send({
+        message: "API page"
+    });
+});
+
+//Home page
 app.get('/', (req, res) => {
     res.send({
-        message: "YeetMeister"
+        message: "Home page"
     });
 });
 
