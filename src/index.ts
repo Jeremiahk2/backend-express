@@ -16,11 +16,11 @@ app.get('/api', (req, res) => {
 });
 
 //Home page
-app.get('/', (req, res) => {
-    res.send({
-        message: "Home page"
-    });
-});
+// app.get('/', (req, res) => {
+//     res.send({
+//         message: "Home page"
+//     });
+// });
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
 const HOST = process.env.HOST || 'localhost';
