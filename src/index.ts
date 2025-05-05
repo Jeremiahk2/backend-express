@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.options("*", cors());
+
 // Basic route
 app.get('/api', (req, res) => {
     res.send({
