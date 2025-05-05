@@ -15,6 +15,12 @@ app.get('/api', (req, res) => {
     });
 });
 
+app.get('/api/api', (req, res) => {
+    res.send({
+        message: "API page"
+    });
+});
+
 //Home page
 app.get('/', (req, res) => {
     res.send({
