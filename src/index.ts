@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import usersRoute from './routes/users';
 import {dbClient} from "./db";
 
 
@@ -10,7 +9,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/users', usersRoute)
 
 app.options("*", cors());
 
