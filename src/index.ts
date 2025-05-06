@@ -14,6 +14,7 @@ app.options("*", cors());
 
 // Basic route
 app.get('/api', async (req, res) => {
+    await dbClient.connect();
     try {
         const result = await dbClient.query(
             'SELECT email FROM users WHERE username = $1',

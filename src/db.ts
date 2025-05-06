@@ -8,7 +8,3 @@ export const dbClient = new Client({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
 });
-
-dbClient.connect()
-    .then(() => console.log('Connected to PostgreSQL'))
-    .catch((err) => console.error('PostgreSQL connection error:', err));
