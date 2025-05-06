@@ -9,3 +9,6 @@ export const dbClient = new Client({
     database: process.env.DB_NAME,
     ssl: {rejectUnauthorized: false}
 });
+
+dbClient.connect().then(() => console.log('Connected to PostgreSQL'))
+    .catch((err) => console.error('PostgreSQL connection error:', err));

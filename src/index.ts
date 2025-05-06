@@ -14,8 +14,6 @@ app.options("*", cors());
 
 // Basic route
 app.get('/api', async (req, res) => {
-    await dbClient.connect().then(() => console.log('Connected to PostgreSQL'))
-        .catch((err) => console.error('PostgreSQL connection error:', err));
     try {
         const result = await dbClient.query(
             'SELECT email FROM users WHERE username = $1',
